@@ -1,12 +1,15 @@
 {
+  "homepage":"https://AgustinFredes98.github.io/WebHipico",
   "name": "webhipico",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out",
     "dev": "next",
-    "build": "next build",
-    "build-css": "tailwindcss build src/styles.css -o public/styles.css",
+    "build": "next build && next export",
+    "build-css": "tailwindcss build src/styles/styles.css -o public/styles.css",
     "start": "next start"
   },
   "keywords": [],
@@ -24,6 +27,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.7.13",
-    "@types/react": "^18.0.17"
+    "@types/react": "^18.0.17",
+    "gh-pages": "^4.0.0"
   }
 }
